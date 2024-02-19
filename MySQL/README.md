@@ -90,8 +90,13 @@
   - TRUNCATE TABLE table_name; 
 - SQL COMMIT Statement
 - SQL ROLLBACK Statement
-
-
+### SQL Operators 
+- An operator is a reserved word or a character used primarily in a SQL statement where a clause performs operations such as comparisons and arithmetic operations.
+- Operators are used to specify conditions in an SQL statement
+- Arithmetic Operators (+, -, /, *, %)
+- Comparison Operators (=, <>, !=, >, <, >= ,<=, !>, !<)
+- Logical Operators (AND, OR, NOT)
+- Other Operators (BETWEEN, IN, LIKE, IS NULL, DISTINCT, EXISTS )
 
 
 
