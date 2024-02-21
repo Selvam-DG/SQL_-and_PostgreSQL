@@ -60,7 +60,7 @@
 - Time
 ### Misc Data Type:
 - Image
-## SQL CLAUSES
+### SQL CLAUSES
 - SQL WHERE Clause
   - SELECT column1, column2....columnN FROM table_EID WHERE  CONDITION; 
 - SQL LIKE Clause
@@ -74,7 +74,9 @@
 
 ### SQL Statements
 - SQL UPDATE Statement
-  - UPDATE table_name  SET column1 = value1, column2 = value2....columnN=valueN [ WHERE  CONDITION ];
+  - UPDATE table_name
+    SET column1 = value1, column2 = value2....columnN=valueN
+    [ WHERE  CONDITION ];
 - SQL DELETE Statement
   - DELETE FROM table_name WHERE  {CONDITION};
   - DELETE FROM table_name;
