@@ -26,9 +26,19 @@
   - CONCAT()- concatenate two string
   - LENGTH() - returns the length of the string
   - UPPER()- Returns a Uppercase string
-  - LOWER()- Gives a lower case string
-
-
+  - LOWER()- Gives a lowercase string
+### Filtering Records:
+- Filtering Rows with "WHERE"
+- Updating Rows using"UPDATE"
+- Deleting Record with "DELETE"
+### Working with Tables:
+- Database design with
+  - One-to-many relationships or  many-to-one relationship
+    - one boat with many crew members
+  - one-to-one relationship
+    - one company one CEO, one boat one captain
+  - many-to-many relationship
+    - players play many matches
 
 
 
