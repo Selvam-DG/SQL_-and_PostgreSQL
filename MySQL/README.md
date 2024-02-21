@@ -126,12 +126,60 @@
   - **CHECK Constraint**: The CHECK constraint ensures that all values in a column satisfy certain conditions.
   - **FOREIGN Key**: Uniquely identified rows/records in any other database table.  
 
+#### NOT NULL Constraint: 
+- By default, a column can hold NULL values. If we do not want a column to have a NULL value then we need to define such constraint on this column specifying that NULL is now not allowed for that column.
+  - CREATE TABLE SALES(
+    - ID   INT
+    - NOT NULL,
+    - EID VARCHAR (20)     NOT NULL,
+    - AGE  INT
+    - NOT NULL,
+    - ADDRESS  CHAR (25),
+    - SALARY   DECIMAL (18, 2));
+  - ALTER TABLE SALES
+  - ALTER COLUMN SALARY  DECIMAL (18, 2) NOT NULL; 
 
+#### DEFAULT Constraint: 
+- The DEFAULT constraint provides a default value to a column when the INSERT INTO statement does not provide a specific value
+  - CREATE TABLE SALES(
+    - ID   INT
+    - NOT NULL,
+    - EID VARCHAR (20)     NOT NULL,
+    - AGE  INT NOT NULL,
+    - ADDRESS  CHAR (25) ,
+    - SALARY   DECIMAL (18, 2) DEFAULT 5000.00 );
+  - ALTER TABLE SALES
+  - ADD CONSTRAINT DSAL DEFAULT 5000.00 FOR SALARY;
+  - ALTER TABLE SALES
+    - DROP CONSTRAINT DSAL;  
 
-
-
-
-
+#### UNIQUE Constraint: 
+- The UNIQUE constraint provides a unique value to a column.
+- Syntax:
+  - CREATE TABLE SALES(
+    - ID   INT  NOT NULL,
+    - EID VARCHAR (20)     NOT NULL,
+    - AGE  INT  NOT NULL UNIQUE,
+    - ADDRESS  CHAR (25),
+    - SALARY   DECIMAL (18, 2) DEFAULT 5000.00 );
+  - ALTER TABLE SALES
+    - ADD CONSTRAINT <CONSTRAINT EID > UNIQUE (AGE);
+  - ALTER TABLE SALES
+    - ADD CONSTRAINT myUniqueConstraint UNIQUE(AGE, SALARY);
+  - ALTER TABLE SALES
+    - DROP CONSTRAINT myUniqueConstraint;
+#### CHECK Constraint: 
+- The CHECK Constraint enables a condition to check the value being entered into a record. If the condition evaluates to false, the record violates the constraint and it is not entered into the table.
+- Syntax:
+  - CREATE TABLE SALES(
+    - ID   INT  NOT NULL,
+    - EID VARCHAR (20)     NOT NULL,
+    - AGE  INT  NOT NULL  CHECK (AGE > 18),
+    - ADDRESS  CHAR (25) ,
+    - SALARY   DECIMAL (18, 2) DEFAULT 5000.00);
+  - ALTER TABLE SALES
+    - ADD CONSTRAINT ckAge CHECK (AGE > 18);
+  - ALTER TABLE SALESS DROP CONSTRAINT ckAge;
 
 ##### PRIMARY KEY Constraint: 
 - A primary key is a field in a table that uniquely identifies each rows/records in a database table. Primary keys must contain unique values. A primary key column cannot have NULL values.
@@ -148,11 +196,38 @@
 - Other syntax
   - ALTER TABLE SALES
     - ADD CONSTRAINT pkID  PRIMARY KEY (ID);
-  - ALTER TABLE SALESS
+  - ALTER TABLE SALES
     - DROP CONSTRAINT pkID;
 
+#### FOREIGN KEY Constraint: 
+- A foreign key is a key used to link two tables together. This is sometimes called a referencing key.
+- Syntax:
+  - CREATE TABLE SALES(
+    - ID   INT NOT NULL,
+    - EID VARCHAR (20) NOT NULL,
+    - AGE  INT NOT NULL,
+    - ADDRESS  CHAR (25) ,
+    - PRIMARY KEY (ID) );
+  - CREATE TABLE ORDERS(
+    - OID   INT NOT NULL,
+    - CUST_ID INT REFERENCES SALES (ID),
+    - ODATE  DATE,
+    - QTY INT,
+    - PRICE INT );
+  - ALTER TABLE ORDERS
+  - ADD CONSTRAINTS  FKID  FOREIGN KEY (CUST_ID) REFERENCES  SALESS (ID); 
 
-
+#### SQL CLAUSES 
+- **SQL BETWEEN Clause**
+  - SELECT column1, column2....columnN FROM   table_EID WHERE  column_EID BETWEEN val1 AND val-2;
+- **SQL IN Clause**
+  - SELECT column1, column2....columnN FROM   table_EID WHERE  column_EID IN (Val1, Val2... Valn);
+- **SQL Like Clause**
+  - SELECT column1, column2....columnN FROM table_EID WHERE  column_EID LIKE {PATTERN} 
+- **SQL COUNT Clause**
+  - SELECT COUNT(column_EID) FROM   table_EID WHERE  CONDITION;
+- **SQL DISTINCT Clause**
+  - SELECT DISTINCT (column) FROM   table_EID; 
 
 
 
