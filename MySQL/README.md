@@ -105,6 +105,64 @@
 -  There are two reasons for the normalization process:
   - Eliminating redundant data, for example, storing the same data in more than one tables.
   - Ensuring data dependencies make sense.
+- **First Normal Form (1NF)**:
+  - Define the data items. This means looking at the data to be stored, organizing the data into columns, defining what type of data each column contains, and finally putting related columns into their own table.
+  - Ensure that there are no repeating groups of data
+  - Ensure that there is a primary key.
+- **Second Normal Form (2NF)**
+  - It should meet all the rules for 1NF
+  - There must be no partial dependencies of any of the columns on the primary key    
+- **Third Normal Form (3NF)**
+  - It should meet all the rules for 2NF
+  - Tables should have a relationship. (one-to-one, one-to-many, many-to-one, many-to-many relationships)
+
+### SQL Constraints:
+- Constraints are the rules enforced on data columns on a table. These are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.
+- The following are commonly used constraints available in SQL:
+  - **PRIMARY Key**: Uniquely identified each row/record in a database table.
+  - **UNIQUE Constraint**: Ensures that all values in a column are different.
+  - **NOT NULL Constraint**: Ensures that a column cannot have a NULL value.
+  - **DEFAULT Constraint**: Provides a default value for a column when none is specified.
+  - **CHECK Constraint**: The CHECK constraint ensures that all values in a column satisfy certain conditions.
+  - **FOREIGN Key**: Uniquely identified rows/records in any other database table.  
+
+
+
+
+
+
+
+
+##### PRIMARY KEY Constraint: 
+- A primary key is a field in a table that uniquely identifies each rows/records in a database table. Primary keys must contain unique values. A primary key column cannot have NULL values.
+- A table can have only one primary key which may consist of single or multiple fields. When multiple fields are used as a primary key, they are called a composite key.
+- Syntax:
+  - CREATE TABLE SALESS(
+    - ID   INT
+    - NOT NULL,
+    - EID VARCHAR (20)     NOT NULL,
+    - AGE  INT  NOT NULL,
+    - ADDRESS  CHAR (25),
+    - SALARY   DECIMAL (18, 2),
+    - PRIMARY KEY (ID) );
+- Other syntax
+  - ALTER TABLE SALES
+    - ADD CONSTRAINT pkID  PRIMARY KEY (ID);
+  - ALTER TABLE SALESS
+    - DROP CONSTRAINT pkID;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
