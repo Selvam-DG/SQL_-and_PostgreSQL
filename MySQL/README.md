@@ -100,6 +100,11 @@
 - Logical Operators (AND, OR, NOT)
 - Other Operators (BETWEEN, IN, LIKE, IS NULL, DISTINCT, EXISTS )
 
+### Normalization 
+- Database normalization is the process of efficiently organizing data in a database.  It is a set or rules/guidelines/statements that we follow while storing the data.
+-  There are two reasons for the normalization process:
+  - Eliminating redundant data, for example, storing the same data in more than one tables.
+  - Ensuring data dependencies make sense.
 
 
 
