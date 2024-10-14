@@ -12,18 +12,13 @@
 - Now, suppose after you create your database, you realise that you have typed the name wrongly. There is no easy way to rename a database in MySQL. What you can do is create a new database and delete the old database. To delete a database, we use the syntax
   - DROP DATABASE [IF EXISTS] name_of_database;
 # Creating Tables
- 
-
-First, let’s look at how we can create tables to add to our database. To create a table, we use the following syntax:
-
- 
-
-CREATE TABLE table_name (
-      column_name1 datatype [column constraints],
-      column_name2 datatype [column constraints],
-      …
+- First, let’s look at how we can create tables to add to our database. To create a table, we use the following syntax:
+  - CREATE TABLE table_name (
+    column_name1 datatype [column constraints],
+    column_name2 datatype [column constraints],
+    …
       [table constraints],
       [table constraints]
-);      
+    );      
 
 
