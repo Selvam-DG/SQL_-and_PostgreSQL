@@ -13,6 +13,8 @@
   - DROP DATABASE [IF EXISTS] name_of_database;
 # Creating Tables
 - First, let’s look at how we can create tables to add to our database. To create a table, we use the following syntax:
+
+
             CREATE TABLE table_name (
               column_name1 datatype [column constraints],
               column_name2 datatype [column constraints],
