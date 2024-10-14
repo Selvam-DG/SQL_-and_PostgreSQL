@@ -153,7 +153,7 @@
 
 # Deleting Tables
 - we use the syntax below:
-- 
+ 
        DROP TABLE [IF EXISTS] table_name;
 
 
