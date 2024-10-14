@@ -97,9 +97,77 @@
 
 
         Some readers may notice that a UNIQUE constraint is very similar to a PRIMARY KEY constraint. Indeed, a primary key is unique by definition.
-    However, one of the main differences between a primary key and a unique key is that a table can only have one primary key but can have multiple unique keys.
+          However, one of the main differences between a primary key and a unique key is that a table can only have one primary key but can have multiple unique keys.
 
  
+### Named Constraints
+- we added table constraints without naming them. If we want, we can name our constraints. To do that, we add the following syntax before stating the constraint:
+
+          CONSTRAINT name_of_constraint
+
+          for example : CONSTRAINT mm_constraint UNIQUE (mentor_id, mentee_id)
+
+
+- The code to create the table is:
+
+          CREATE TABLE mentorships (
+          mentor_id INT NOT NULL,
+          mentee_id INT NOT NULL,
+          status VARCHAR(255) NOT NULL,
+          project VARCHAR(255) NOT NULL,
+  
+          PRIMARY KEY (mentor_id, mentee_id, project),
+          CONSTRAINT fk1 FOREIGN KEY(mentor_id) REFERENCES co_employees(id) ON DELETE CASCADE ON UPDATE RESTRICT,
+          CONSTRAINT fk2 FOREIGN KEY(mentee_id) REFERENCES co_employees(id) ON DELETE CASCADE ON UPDATE RESTRICT,
+          CONSTRAINT mm_constraint UNIQUE(mentor_id, mentee_id)
+          );
+
+# Altering Tables
+
+- Table Names
+  - The first thing we can modify is the table name. To do that, we use the syntax
+
+      RENAME TABLE old_name TO new_name;
+
+- Columns and Table Constraints
+
+      ALTER TABLE table_name
+
+- followed by
+  - AUTO_INCREMENT = starting_value to change the starting value of the auto increment column,
+  - ADD CONSTRAINT [name of constraint] details_of_constraint to add a table constraint (including foreign key constraints),
+  - DROP INDEX name_of_constraint to drop a table constraint (excluding foreign key constraints),
+  - DROP FOREIGN KEY name_of_foreign_key to drop a foreign key constraint,
+  - MODIFY COLUMN column_name data_type [constraints] to modify a column,
+  - DROP COLUMN column_name to drop a column, and
+  - ADD COLUMN column_name data_type [constraints] to add a column.
+ 
+        ALTER TABLE employees
+        DROP COLUMN age,
+        ADD COLUMN salary FLOAT NOT NULL AFTER contact_number,
+        ADD COLUMN years_in_company INT NOT NULL AFTER salary;
+  
+- After modifying our table, we can check if our modifications are correct by asking MySQL to describe our table.The syntax is simply
+
+      DESCRIBE table_name;
+
+# Deleting Tables
+- we use the syntax below:
+- 
+       DROP TABLE [IF EXISTS] table_name;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
